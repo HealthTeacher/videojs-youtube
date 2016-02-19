@@ -21,15 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 /*global define, YT*/
 (function (root, factory) {
-  if(typeof define === 'function' && define.amd) {
-    define(['video.js'], function(videojs){
-      return (root.Youtube = factory(videojs));
-    });
-  } else if(typeof module === 'object' && module.exports) {
-    module.exports = (root.Youtube = factory(require('video.js')));
-  } else {
-    root.Youtube = factory(root.videojs);
-  }
+  root.Youtube = factory(root.videojs);
 }(this, function(videojs) {
   'use strict';
 
